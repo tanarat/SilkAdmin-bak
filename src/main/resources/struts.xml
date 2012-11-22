@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+	<package name="web/halal" namespace="/web/halal" extends="hibernate-default">
+		<action name="saveOrUpdate" method="save" class="org.silk.halal.action.HalalBarcodeAction">
+			<result name="success" type="redirect">list</result>
+		</action>
+		<action name="list" method="list" class="org.silk.halal.action.HalalBarcodeAction">
+			<result name="success">list.jsp</result>
+		</action>
+		<action name="edit" method="edit" class="org.silk.halal.action.HalalBarcodeAction">
+			<result name="success">add.jsp</result>
+		</action>
+		<action name="delete" method="delete" class="org.silk.halal.action.HalalBarcodeAction">
+			<result name="success" type="redirect">list</result>
+		</action>
+		<action name="search" method="search" class="org.silk.halal.action.HalalBarcodeAction">
+		    <result name="success">result.jsp</result>
+		    <result name="error">error.jsp</result>
+		</action>
+	</package>
+		<package name="web/entrepreneur" namespace="/web/entrepreneur" extends="hibernate-default">
+		<action name="saveOrUpdate" method="save" class="org.silk.entrepreneur.action.EntrepreneurAction">
+			<result name="success" type="redirect">list</result>
+		</action>
+		<action name="list" method="list" class="org.silk.entrepreneur.action.EntrepreneurAction">
+			<result name="success">list.jsp</result>
+		</action>
+		<action name="edit" method="edit" class="org.silk.entrepreneur.action.EntrepreneurAction">
+			<result name="success">add.jsp</result>
+		</action>
+		<action name="delete" method="delete" class="org.silk.entrepreneur.action.EntrepreneurAction">
+			<result name="success" type="redirect">list</result>
+		</action>
+	</package>
+</struts>
